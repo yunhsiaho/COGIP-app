@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 //include all your controllers here
 require 'Controller/HomepageController.php';
 

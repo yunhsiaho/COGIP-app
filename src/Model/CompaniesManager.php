@@ -2,49 +2,46 @@
 
 declare(strict_types=1);
 
-namespace Becode\MVCBoilerplate\model;
 
 require_once('Manager.php');
 
 class CompaniesManager extends Manager
 {
 
-    private $name;
-
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
 
     //To display all the companies
-    public function getCompanies()
-    {
-        
+    public function getCompanyName(){
+
+        // NOTE: last 5 company name
+    
         $db = $this->connectDb();
+    
+        try {
+          $companyName = $db->prepare("SELECT *
+          FROM companies");
+          $companyName->execute();
+        } catch (Exception $e) {
+          echo $e->getMessage();
+          exit;
+        }
+        return $companyName -> fetch(PDO::FETCH_ASSOC);
+      } 
 
-        $req = $db->query('SELECT ... AS ... 
-            FROM ... 
-            ORDER BY ... 
-            DESC');
+    // //To display company by id
+    // public function getCompany(int $companyId)
+    // {
 
-        return $req->fetch(PDO::FETCH_ASSOC);
-    }
+    //     $db = $this->connectDb();
 
-    //To display company by id
-    public function getCompany(int $companyId)
-    {
+    //     $req = $db->prepare('SELECT ... AS ... 
+    //         FROM ... 
+    //         WHERE id = ?');
 
-        $db = $this->connectDb();
+    //     $req->bindParam(1, $this->companyId, PDO::PARAM_STR);
+    //     $req->execute();
+    //     $company = $req->fetch();
 
-        $req = $db->prepare('SELECT ... AS ... 
-            FROM ... 
-            WHERE id = ?');
-
-        $req->bindParam(1, $this->companyId, PDO::PARAM_STR);
-        $req->execute();
-        $company = $req->fetch();
-
-        return $company;
-    }
+    //     return $company;
+    // }
 
 }
