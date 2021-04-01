@@ -1,18 +1,27 @@
 <?php
  
 
- class CompaniesManager extends Dbconnect {
+ class InvoicesManager extends Dbconnect {
 
-   public function getCompanies() {
+   public function getInvoices() {
 
-     $sql = "SELECT * FROM companies LIMIT 5";
+    $sql = "SELECT * FROM `invoices`\n"
+
+    . "JOIN companies\n"
+
+    . "on invoices.comp_id=companies.comp_id\n"
+
+    . "ORDER by invoice_date DESC\n"
+
+    //. "limit 5"
+    ;
      
      $stmt = $this->connect()->query($sql); 
      
     
-    $companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $invoices = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    return $companies;
+    return $invoices;
     
    }
 

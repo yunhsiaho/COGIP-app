@@ -6,7 +6,7 @@ Anything complex should be calculated in the model -->
 
 	<h1>Welcome to the COGIP! I DON'T KNOOOOOOOOOOOOOOOOOOW</h1>
     <ol>
-    	<?php 
+    <?php 
 			$companyName = new CompaniesManager();
 			$test = $companyName->getCompanyName();
 			var_dump($test);
