@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-require 'connect.php';
+// require 'connect.php';
 
 class Manager
 {
