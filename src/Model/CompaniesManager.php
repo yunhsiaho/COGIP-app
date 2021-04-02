@@ -1,22 +1,22 @@
 <?php
- 
 
- class CompaniesManager extends Dbconnect {
 
-   public function getCompanies() {
+class CompaniesManager extends Dbconnect {
 
-     $sql = "SELECT * FROM companies LIMIT 5";
-     
-     $stmt = $this->connect()->query($sql); 
-     
+public function getCompanies() {
+
+    $sql = "SELECT * FROM companies LIMIT 5";
     
-    $companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    return $companies;
+    $stmt = $this->connect()->query($sql); 
     
-   }
 
- }
+$companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+return $companies;
+
+}
+
+}
 
  //  while($row = $stmt->fetch()) {
 

@@ -1,14 +1,14 @@
 <?php 
 require 'includes/header.php';
-include '../connect.php';
-include '../CompaniesManager.php';
-include '../InvoicesManager.php';
+include '../Model/Manager.php';
+include '../Model/CompaniesManager.php';
+include '../Model/InvoicesManager.php';
 
 ?>
 
 <!-- this is the view, try to put only simple if's and loops here.
 Anything complex should be calculated in the model -->
-<section>
+
 <div class="container">
 	<h1>Welcome to the COGIP</h1>
 	
@@ -64,7 +64,6 @@ Anything complex should be calculated in the model -->
 			$x++; } 
 			?>
 		</table>
+	<?php require 'includes/footer.php'?>
 </div>
 
-</section>
-<?php require 'includes/footer.php'?>

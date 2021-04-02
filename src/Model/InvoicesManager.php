@@ -1,31 +1,31 @@
 <?php
- 
 
- class InvoicesManager extends Dbconnect {
 
-   public function getInvoices() {
+class InvoicesManager extends Dbconnect {
 
-    $sql = "SELECT * FROM `invoices`\n"
+  public function getInvoices() {
 
-    . "JOIN companies\n"
+  $sql = "SELECT * FROM `invoices`\n"
 
-    . "on invoices.comp_id=companies.comp_id\n"
+  . "JOIN companies\n"
 
-    . "ORDER by invoice_date DESC\n"
+  . "on invoices.comp_id=companies.comp_id\n"
 
-    //. "limit 5"
-    ;
-     
-     $stmt = $this->connect()->query($sql); 
-     
+  . "ORDER by invoice_date DESC\n"
+
+  //. "limit 5"
+  ;
     
-    $invoices = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    return $invoices;
+    $stmt = $this->connect()->query($sql); 
     
-   }
+  
+  $invoices = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
- }
+  return $invoices;
+  
+  }
+
+}
 
  //  while($row = $stmt->fetch()) {
 

@@ -1,9 +1,8 @@
 <?php 
 require 'includes/header.php';
-include '../connect.php';
-include '../CompaniesManager.php';
-include '../InvoicesManager.php';
-include '../Test-contactManager.php'
+include '../Model/Manager.php';
+include '../Model/CompaniesManager.php';
+include '../Model/ContactsManager.php';
 
 ?>
 <div class="container">
@@ -20,7 +19,7 @@ include '../Test-contactManager.php'
 	
 		<?php
 			$Contact= new ContactManager();
-			foreach ($Contact->ContactManager() as $OneContact) { ?>
+			foreach ($Contact->getContacts() as $OneContact) { ?>
 			<tr>
 		<td><?php echo $OneContact['person_first_name']?></td>
 		<td><?php echo $OneContact['person_last_name']?></td>
@@ -33,8 +32,8 @@ include '../Test-contactManager.php'
 			
 		<?php } ?>
 	</table>
+	<?php require 'includes/footer.php'?>
 </div>
 
 
 
-<?php require 'includes/footer.php'?>

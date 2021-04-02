@@ -52,12 +52,14 @@ footer{
     justify-content:center;
     align-items:center;
 }
-/* body-homepage */
+/* body-page */
 h1{
     text-align:center;
 }
 .container{
-    margin:5rem;
+    position:relative;
+    padding:5rem;
+    min-height:100vh;
 }
 table{
     width:80%;
@@ -66,19 +68,41 @@ th{
     text-align:left;
 }
 /* admin */
-.admin-container{
+.admin-container form{
     height:50%;
     width:50%;
     margin-left:auto;
     margin-right:auto;
     margin-top:3rem;
     margin-bottom:3rem;
-    padding:3rem;
+    padding-top:6rem;
+    padding-bottom:6rem;
     text-align:center;
     font-size:2rem;
-    border:3px solid black;
+    /* border:2px solid #9A8F84; */
+    border-radius:30px;
+    background-color:#E3E0DD;
 }
+.admin-container label{
+    background-color:#E3E0DD;
+    color:#264653;
+}
+
 .admin-container input{
     height:2rem;
+    margin:1rem;
+    background-color:#F6F5F4;
+    border:none;
+    font-size:1.2rem;
+}
+.admin-button{
+    font-size:1.2rem;
+    height:3rem;
+    width:6rem;
+    margin-top:2rem;
+    background-color:#F6F5F4;
+    color:#264653;
+    border:none;
+    border-radius:10px;
 }
 </style>

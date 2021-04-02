@@ -1,8 +1,8 @@
 <?php 
 require 'includes/header.php';
-include '../connect.php';
-include '../CompaniesManager.php';
-include '../InvoicesManager.php';
+include '../Model/Manager.php';
+include '../Model/CompaniesManager.php';
+include '../Model/InvoicesManager.php';
 
 ?>
 <div class="container">
@@ -37,5 +37,5 @@ include '../InvoicesManager.php';
 			$x++; } 
 			?>
 		</table>
-    </div>       
-<?php require 'includes/footer.php'?>
+	<?php require 'includes/footer.php'?>
+</div>       
