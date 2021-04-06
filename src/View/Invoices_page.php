@@ -30,12 +30,48 @@ include '../Model/InvoicesManager.php';
 			<td><?php echo $invoice['invoice_num']?></td>
 			<td><?php echo $invoice['invoice_date']?></td>
 			<td><?php echo $invoice['comp_name']?></td>
-			<td><button>more</button></td>
+			<form action="" method="post">
+			<td><button name="more" type="submit">more</button></td>
 			<td><button>edit</button></td>
+			</form>
 			</tr>
 		<?php
 			$x++; } 
 			?>
 		</table>
+		<?php if(isset($_POST['more'])):	?>
+		<table>
+		<tr>
+		<th>Company Name</th>
+		<th>TVA</th>
+		<th>Company Type</th>
+		</tr>
+		<?php foreach ($invoices->getdetails_comp() as $detail_Comp): ?>
+		<tr>
+		<td><?php echo $detail_Comp['comp_name']?></td>
+		<td><?php echo $detail_Comp['comp_VAT']?></td>
+		<td><?php echo $detail_Comp['comp_type']?></td>
+		</tr>
+		<?php endforeach  ?>
+		</table>
+		<table>
+		<tr>
+		<th>Contact Name</th>
+		<th>Contact Email</th>
+		</tr>
+		<?php foreach ($invoices->getdetails_comp() as $detail_Comp): ?>
+		<tr>
+		<td><?php echo $detail_Comp['person_first_name']?> <?php echo $detail_Comp['person_last_name']?></td>
+		<td><?php echo $detail_Comp['person_email']?></td>
+		</tr>
+		</table>
+		<?php endforeach  ?>
+		<?php endif ?>
 	<?php require 'includes/footer.php'?>
 </div>       
+
+<!-- php -->
+<?php
+// if(isset($_GET['more'])){
+// 	$invoice_num = $_GET['invoice_num'];
+// 	$result = $

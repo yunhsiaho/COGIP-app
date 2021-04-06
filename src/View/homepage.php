@@ -29,9 +29,8 @@ Anything complex should be calculated in the model -->
 		<td><?php echo $company['comp_type']?></td>
 		<td><button>more</button></td>
 		<td><button>edit</button></td>
-
 		</tr>	
-			
+		
 		<?php } ?>
 	</table>
 	
