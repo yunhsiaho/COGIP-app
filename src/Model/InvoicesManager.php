@@ -6,11 +6,8 @@ class InvoicesManager extends Dbconnect {
   public function getInvoices() {
 
   $sql = "SELECT * FROM invoices
-
   JOIN companies
-
   on invoices.comp_id=companies.comp_id
-
   ORDER by invoice_date DESC"
 
   ;
@@ -26,7 +23,6 @@ class InvoicesManager extends Dbconnect {
 
   public function getdetails_comp(){
     $sql = "SELECT * FROM `invoices`
-
     JOIN companies
   
     on invoices.comp_id=companies.comp_id"
@@ -43,7 +39,6 @@ class InvoicesManager extends Dbconnect {
 
   public function getdetails_contact(){
     $sql = "SELECT * FROM `contact_persons`
-
     JOIN companies
   
     on contact_persons.comp_id=companies.comp_id"
@@ -59,14 +54,3 @@ class InvoicesManager extends Dbconnect {
   }
 
 }
-
- //  while($row = $stmt->fetch()) {
-
-    //   echo $row['comp_name'] . ' | ';
-    //   echo $row['comp_country'] . '<br>';
-    //  }
-
-    // foreach($companies as $key => $company){
-    //   echo $company['comp_name'];
-    //   echo'<br/>';
-    //  }

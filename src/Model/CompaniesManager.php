@@ -1,30 +1,28 @@
 <?php
+ 
 
+ class CompaniesManager extends Dbconnect {
 
-class CompaniesManager extends Dbconnect {
-
-public function getCompanies() {
-
-    $sql = "SELECT * FROM companies LIMIT 5";
+    public function getCompanies() {
+  
+        $sql = "SELECT * FROM companies WHERE comp_type='client' LIMIT 5";
+        
+        $stmt = $this->connect()->query($sql); 
+        
+        $companies_client = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    $stmt = $this->connect()->query($sql); 
+        return $companies_client;
+    }
+
+    public function getCompanies_provider() {
     
-
-$companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-return $companies;
+        $sql = "SELECT * FROM companies WHERE comp_type='provider' LIMIT 5";
+        
+        $stmt = $this->connect()->query($sql);
+        
+        $companies_provider = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $companies_provider;
+    } 
 
 }
-
-}
-
- //  while($row = $stmt->fetch()) {
-
-    //   echo $row['comp_name'] . ' | ';
-    //   echo $row['comp_country'] . '<br>';
-    //  }
-
-    // foreach($companies as $key => $company){
-    //   echo $company['comp_name'];
-    //   echo'<br/>';
-    //  }

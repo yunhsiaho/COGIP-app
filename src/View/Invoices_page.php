@@ -23,7 +23,7 @@ include '../Model/InvoicesManager.php';
 		$invoices= new InvoicesManager();
 
 		foreach ($invoices->getInvoices() as $invoice) { 
-			if ($x>=5)
+			if ($x>=20)
 			break;?>
 
 			<tr>

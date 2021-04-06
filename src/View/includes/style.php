@@ -87,7 +87,6 @@ th{
     background-color:#E3E0DD;
     color:#264653;
 }
-
 .admin-container input{
     height:2rem;
     margin:1rem;

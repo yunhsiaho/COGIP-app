@@ -6,30 +6,44 @@ include '../Model/InvoicesManager.php';
 
 ?>
 <div class="container">
-	<h1>Welcome to the COGIP</h1>
+	<h1>COGIP : Companies Directory</h1>
 	
-	<h3>Companies</h3>
-	<hr/>
+	<h4>Clients</h4>
 	<table>
-	<tr>
-	<th>Company name</th>
-	<th>Country</th>
-	<th>Type</th></tr>
-	
+		<tr>
+			<th>Company name</th>
+			<th>Country</th>
+		</tr>
+		
 		<?php
-			$companies= new CompaniesManager();
-			foreach ($companies->getCompanies() as $company) { ?>
+			$companies_client=new CompaniesManager();
+			foreach ($companies_client->getCompanies() as $company_client) { ?>
 			<tr>
-		<td><?php echo $company['comp_name']?></td>
-		<td><?php echo $company['comp_country']?></td>
-		<td><?php echo $company['comp_type']?></td>
-		<td><button>more</button></td>
-		<td><button>edit</button></td>
+				<td><?php echo $company_client['comp_name']?></td>
+				<td><?php echo $company_client['comp_country']?></td>
+				<td><button>more</button></td>
+				<td><button>edit</button></td>
+			</tr>	
+			<?php } ?>
+	</table>
 
-		</tr>	
-			
-		<?php } ?>
+	<h4>Suppliers</h4>
+	<table>
+		<tr>
+			<th>Company name</th>
+			<th>Country</th>
+		</tr>
+		
+		<?php
+			$companies_provider=new CompaniesManager();
+			foreach ($companies_provider ->getCompanies_provider() as $company_provider ) { ?>
+			<tr>
+				<td><?php echo $company_provider ['comp_name']?></td>
+				<td><?php echo $company_provider ['comp_country']?></td>
+				<td><button>more</button></td>
+				<td><button>edit</button></td>
+			</tr>	
+			<?php } ?>
 	</table>
 	<?php require 'includes/footer.php'?>
 </div>
-
