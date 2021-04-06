@@ -18,7 +18,7 @@ include '../Model/ContactsManager.php';
 		<?php
 		$x=0;
 
-		$Contact= new ContactManager();
+		$Contact= new ContactsManager();
 		foreach ($Contact->getContacts() as $OneContact) { 
 			if ($x>=20)
 			break;?>

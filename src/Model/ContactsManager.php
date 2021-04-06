@@ -1,7 +1,7 @@
 <?php
 
 
-class ContactManager extends Dbconnect {
+class ContactsManager extends Dbconnect {
 
 public function getContacts() {
 
