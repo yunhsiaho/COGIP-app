@@ -59,6 +59,7 @@ class InvoicesManager extends Dbconnect {
   }
 
 }
+modifi;
 
  //  while($row = $stmt->fetch()) {
 
