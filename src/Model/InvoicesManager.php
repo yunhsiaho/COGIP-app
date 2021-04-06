@@ -24,7 +24,7 @@ class InvoicesManager extends Dbconnect {
   
   }
 
-  public function getdetails_comp(){
+  public function getDetailsComp(){
     $sql = "SELECT * FROM `invoices`
 
     JOIN companies
@@ -41,7 +41,7 @@ class InvoicesManager extends Dbconnect {
   return $details_comp;
   }
 
-  public function getdetails_contact(){
+  public function getDetailsContact(){
     $sql = "SELECT * FROM `contact_persons`
 
     JOIN companies
@@ -59,7 +59,7 @@ class InvoicesManager extends Dbconnect {
   }
 
 }
-modifi;
+
 
  //  while($row = $stmt->fetch()) {
 

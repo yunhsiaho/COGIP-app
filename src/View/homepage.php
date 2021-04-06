@@ -1,8 +1,8 @@
 <?php 
 require 'includes/header.php';
-include '../Model/Manager.php';
-include '../Model/CompaniesManager.php';
-include '../Model/InvoicesManager.php';
+require '../Model/Manager.php';
+require '../Model/CompaniesManager.php';
+require '../Model/InvoicesManager.php';
 
 ?>
 

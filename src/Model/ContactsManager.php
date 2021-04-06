@@ -5,16 +5,15 @@ class ContactManager extends Dbconnect {
 
 public function getContacts() {
 
-$sql = "SELECT * FROM `contact_persons`\n"
+$sql = "SELECT * FROM contact_persons 
+JOIN companies
 
-. "JOIN companies\n"
-
-. "on contact_persons.comp_id=companies.comp_id\n"
-
+ON contact_persons.comp_id=companies.comp_id"
 
 ;
 
 $stmt = $this->connect()->query($sql); 
+
 
 
 $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -22,5 +21,27 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 return $contacts;
 
 }
+public function getDetailContacts(){
+    $sql = "SELECT * FROM contact_persons
+    JOIN companies 
+    ON contact_persons.comp_id = companies.comp_id";
 
+    $stmt = $this->connect()->query($sql);
+
+    $detail_contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $detail_contacts;
+}
+
+public function getDetailInvoices(){
+    $sql = "SELECT * FROM contact_persons
+    JOIN invoices
+    ON contact_persons.comp_id = invoices.comp_id";
+
+    $stmt = $this->connect()->query($sql);
+
+    $detail_invoices = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $detail_invoices;
+}
 }

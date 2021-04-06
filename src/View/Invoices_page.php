@@ -31,7 +31,7 @@ include '../Model/InvoicesManager.php';
 			<td><?php echo $invoice['invoice_date']?></td>
 			<td><?php echo $invoice['comp_name']?></td>
 			<form action="" method="post">
-			<td><button name="more" type="submit">more</button></td>
+			<td><button name="more" type="submit" value=<?php echo $invoice['comp_id']?>>more</button></td>
 			<td><button>edit</button></td>
 			</form>
 			</tr>
@@ -41,31 +41,37 @@ include '../Model/InvoicesManager.php';
 		</table>
 		<?php if(isset($_POST['more'])):	?>
 		<table>
+		<h3>Company linked to the Invoice</h3>
 		<tr>
 		<th>Company Name</th>
 		<th>TVA</th>
 		<th>Company Type</th>
 		</tr>
-		<?php foreach ($invoices->getdetails_comp() as $detail_Comp): ?>
+		<?php foreach ($invoices->getDetailsComp() as $detail_Comp): ?>
+			<?php if($_POST['more']==$detail_Comp['comp_id']):	?>
 		<tr>
 		<td><?php echo $detail_Comp['comp_name']?></td>
 		<td><?php echo $detail_Comp['comp_VAT']?></td>
 		<td><?php echo $detail_Comp['comp_type']?></td>
 		</tr>
+		<?php break; endif?>
 		<?php endforeach  ?>
 		</table>
 		<table>
+		<h3>Contact Person</h3>
 		<tr>
 		<th>Contact Name</th>
 		<th>Contact Email</th>
 		</tr>
-		<?php foreach ($invoices->getdetails_comp() as $detail_Comp): ?>
+		<?php foreach ($invoices->getDetailsContact() as $detail_contact): ?>
+			<?php if($_POST['more']==$detail_contact['comp_id']):	?>
 		<tr>
-		<td><?php echo $detail_Comp['person_first_name']?> <?php echo $detail_Comp['person_last_name']?></td>
-		<td><?php echo $detail_Comp['person_email']?></td>
+		<td><?php echo $detail_contact['person_first_name']." ".$detail_contact['person_last_name']?></td>
+		<td><?php echo $detail_contact['person_email'].$detail_contact['comp_name']?></td>
 		</tr>
-		</table>
+		<?php endif?>
 		<?php endforeach  ?>
+		</table>
 		<?php endif ?>
 	<?php require 'includes/footer.php'?>
 </div>       
