@@ -17,7 +17,7 @@ include '../Model/InvoicesManager.php';
 		
 		<?php
 			$companies_client=new CompaniesManager();
-			foreach ($companies_client->getCompanies() as $company_client) { ?>
+			foreach ($companies_client->getCompanies_clients() as $company_client) { ?>
 			<tr>
 				<td><?php echo $company_client['comp_name']?></td>
 				<td><?php echo $company_client['comp_country']?></td>

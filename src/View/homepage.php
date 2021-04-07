@@ -11,14 +11,14 @@ include '../Model/ContactsManager.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 </head>
 <body>
 
- 
+
 <section>
 
 <h1>Welcome to the COGIP!</h1>
@@ -27,9 +27,9 @@ include '../Model/ContactsManager.php';
 Bonjour Jean-Christian ! <br/>
 Que souhaiterez-vous faire aujourd'hui ?<br/>
 <br/>
-<td><button>+ New Invoice</button></td>
-<td><button>+ New Contact</button></td>
-<td><button>+ New Compagny</button></td>
+<td><button><a href="create_invoice_page.php">+ New Invoice</a></button></td>
+<td><button><a href="create_contact_page.php">+ New Contact</a></button></td>
+<td><button><a href="create_company_page.php">+ New Company</a></button></td>
 
 <h3>Last Invoices</h3>
     
@@ -44,11 +44,11 @@ Que souhaiterez-vous faire aujourd'hui ?<br/>
 
     <tbody>
       <tr>
-       <?php
-       $x=0;
-       
-       
-       $invoices= new InvoicesManager();
+      <?php
+      $x=0;
+      
+      
+      $invoices= new InvoicesManager();
         foreach ($invoices->getInvoices() as $invoice) { 
         if ($x>=5)
         break;?>
@@ -81,21 +81,21 @@ Que souhaiterez-vous faire aujourd'hui ?<br/>
 
     <tbody>
       <tr>
+    
+      <?php
+      $x=0;
       
-       <?php
-       $x=0;
-       
-       $contacts= new ContactsManager();
+      $contacts= new ContactManager();
 
         foreach ($contacts->getContacts() as $contact) { 
           if ($x>=5)
           break;?>
 
-             <tr>
-              <td><?php echo $contact['person_first_name']?></td>
-              <td><?php echo $contact['person_email']?></td>
-              <td><?php echo $contact['comp_name']?></td>
-             </tr>	
+            <tr>
+            <td><?php echo $contact['person_first_name']?></td>
+            <td><?php echo $contact['person_email']?></td>
+            <td><?php echo $contact['comp_name']?></td>
+            </tr>	
         
         <?php
           $x++; } 
@@ -119,7 +119,7 @@ Que souhaiterez-vous faire aujourd'hui ?<br/>
         <tr>
           <?php
           $x=0;
-	    
+
           $companies= new CompaniesManager();
               foreach ($companies->getCompanies() as $key => $company)  {  
                 if($x>=5)
@@ -136,9 +136,9 @@ Que souhaiterez-vous faire aujourd'hui ?<br/>
                 </tr>	
               </form>
             
-            <?php   
-             $x++; }  
-            ?>
+              <?php
+          $x++; } 
+        ?>
         </tr>       
     </tbody>
 
