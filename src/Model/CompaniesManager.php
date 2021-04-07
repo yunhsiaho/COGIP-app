@@ -1,50 +1,30 @@
 <?php
 
-declare(strict_types=1);
 
-namespace Becode\MVCBoilerplate\model;
+class CompaniesManager extends Dbconnect {
 
-require_once('Manager.php');
+public function getCompanies() {
 
-class CompaniesManager extends Manager
-{
+    $sql = "SELECT * FROM companies LIMIT 5";
+    
+    $stmt = $this->connect()->query($sql); 
+    
 
-    private $name;
+$companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
-
-    //To display all the companies
-    public function getCompanies()
-    {
-        
-        $db = $this->connectDb();
-
-        $req = $db->query('SELECT ... AS ... 
-            FROM ... 
-            ORDER BY ... 
-            DESC');
-
-        return $req->fetch(PDO::FETCH_ASSOC);
-    }
-
-    //To display company by id
-    public function getCompany(int $companyId)
-    {
-
-        $db = $this->connectDb();
-
-        $req = $db->prepare('SELECT ... AS ... 
-            FROM ... 
-            WHERE id = ?');
-
-        $req->bindParam(1, $this->companyId, PDO::PARAM_STR);
-        $req->execute();
-        $company = $req->fetch();
-
-        return $company;
-    }
+return $companies;
 
 }
+
+}
+
+ //  while($row = $stmt->fetch()) {
+
+    //   echo $row['comp_name'] . ' | ';
+    //   echo $row['comp_country'] . '<br>';
+    //  }
+
+    // foreach($companies as $key => $company){
+    //   echo $company['comp_name'];
+    //   echo'<br/>';
+    //  }
