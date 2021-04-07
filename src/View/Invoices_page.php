@@ -41,6 +41,7 @@ include '../Model/InvoicesManager.php';
 		<?php if(isset($_POST['more'])):	?>
 		<table>
 		<h3>Company linked to the Invoice</h3>
+		<hr/>
 		<tr>
 		<th>Company Name</th>
 		<th>TVA</th>
@@ -58,6 +59,7 @@ include '../Model/InvoicesManager.php';
 		</table>
 		<table>
 		<h3>Contact Person</h3>
+		<hr/>
 		<tr>
 		<th>Contact Name</th>
 		<th>Contact Email</th>

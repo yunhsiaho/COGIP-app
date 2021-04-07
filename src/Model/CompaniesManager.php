@@ -52,9 +52,9 @@ return $companies;
 }
 public function getCompaniesInvoices() {
 
-    $sql = "SELECT * FROM contact_persons
-    JOIN invoices
-    ON contact_persons.comp_id = invoices.comp_id";
+    $sql = "SELECT * FROM companies 
+    JOIN invoices 
+    ON companies.comp_id = invoices.comp_id ";
     
     $stmt = $this->connect()->query($sql); 
     
