@@ -23,7 +23,7 @@ include '../Model/InvoicesManager.php';
 		$invoices= new InvoicesManager();
 
 		foreach ($invoices->getInvoices() as $invoice) { 
-			if ($x>=5)
+			if ($x>=20)
 			break;?>
 
 			<tr>
@@ -32,7 +32,6 @@ include '../Model/InvoicesManager.php';
 			<td><?php echo $invoice['comp_name']?></td>
 			<form action="" method="post">
 			<td><button name="more" type="submit" value=<?php echo $invoice['comp_id']?>>more</button></td>
-			<td><button>edit</button></td>
 			</form>
 			</tr>
 		<?php

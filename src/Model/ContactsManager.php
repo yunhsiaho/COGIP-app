@@ -1,7 +1,7 @@
 <?php
 
 
-class ContactManager extends Dbconnect {
+class ContactsManager extends Dbconnect {
 
 public function getContacts() {
 
@@ -36,7 +36,7 @@ public function getDetailContacts(){
 public function getDetailInvoices(){
     $sql = "SELECT * FROM contact_persons
     JOIN invoices
-    ON contact_persons.comp_id = invoices.comp_id";
+    ON contact_persons.person_id = invoices.person_id";
 
     $stmt = $this->connect()->query($sql);
 

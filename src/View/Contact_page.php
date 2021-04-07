@@ -18,7 +18,7 @@ include '../Model/ContactsManager.php';
     <th>Company</th></tr>
 	
 		<?php
-			$Contact= new ContactManager();
+			$Contact= new ContactsManager();
 			foreach ($Contact->getContacts() as $OneContact) { ?>
 			<tr>
 		<td><?php echo $OneContact['person_first_name']?></td>
@@ -27,7 +27,6 @@ include '../Model/ContactsManager.php';
         <td><?php echo $OneContact['comp_name']?></td>
 		<form action="" method="post">
 		<td><button name="more" type="submit" value=<?php echo $OneContact['person_id']?>>more</button></td>
-		<td><button>edit</button></td>
 		</form>		
 		</tr>	
 			
@@ -42,10 +41,11 @@ include '../Model/ContactsManager.php';
 			<hr/>
 				<?php endif ?>
 				<?php endforeach ?>
+				<!-- <?php var_dump($Contact); ?> -->
+				<h3>Contact person for these invoices:</h3>
 				<?php foreach($Contact->getDetailInvoices() as $detail_invoices): ?>
-				<?php if($_POST['more']==$detail_invoices['comp_id']): ?>
+				<?php if($_POST['more']==$detail_invoices['person_id']): ?>
 			<table>
-			<h3>Contact person for these invoices:</h3>
 			<tr>
 			<th>Invoice Number</th>
 			<th>Date</th>
