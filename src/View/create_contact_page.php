@@ -2,6 +2,7 @@
 require 'includes/header.php';
 include '../Model/Manager.php';
 include '../Model/CompaniesManager.php';
+include '../Model/ContactsManager.php';
 
 ?>
 <h1>Create a new contact</h1>
@@ -19,14 +20,28 @@ include '../Model/CompaniesManager.php';
         <select id="contact-comp" name="contact-comp" height="200px">
         <?php $companies= new CompaniesManager();?>
 		<?php foreach ($companies->getCompanies() as $company): ?>
-            <option value='<?php echo $company['comp_id'] ?>'><?php echo $company['comp_name'] ?></option>
+            <option value='<?php echo $company['comp_id'] ?>'><?php echo $company['comp_id'].$company['comp_name'] ?></option>
         <?php endforeach ?>
 
-            
         </select>
     </div>
-        <button type="button" class="create-button">Create</button>
+    <button type="submit" name="submit" class="create-button">Create</button>
     </form>
 </div>
+
+<?php 
+
+// var_dump($contactFirstname, $contactLastname, $email, $compId);
+if(isset($_POST['submit'])){
+    $contactFirstname = $_POST['contact-firstname'];
+    $contactLastname = $_POST['contact-lastname'];
+    $email = $_POST['contact-email'];
+    $compId = $_POST['contact-comp'];
+    $x = new ContactsManager();
+    $x->createContact($contactFirstname, $contactLastname, $email, $compId);
+}
+?>
+
+
 <?php require 'includes/footer.php'?>
 </div>

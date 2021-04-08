@@ -57,7 +57,16 @@ class InvoicesManager extends Dbconnect {
 
   return $details_contact;
   }
+  public function createInvoice($invoiceNum, $invoiceDate, $invoiceComp, $invoiceContact) {
 
+    $sql = "INSERT INTO invoices(invoice_num, invoice_date, comp_VAT, comp_id, person_id)
+    VALUES( '$invoiceNum', '$invoiceDate', '$invoiceVAT', '$invoiceComp', '$invoiceContact'); ";
+    $stmt = $this->connect()->query($sql); 
+    $createInvoice = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // mysqli_query($createCompany, $sql);
+    // header(Location:'View/create_company_page.php');
+
+}
 }
 
 

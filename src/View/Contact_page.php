@@ -18,7 +18,7 @@ include '../Model/ContactsManager.php';
     <th>Company</th></tr>
 	
 		<?php
-			$Contact= new ContactManager();
+			$Contact= new ContactsManager();
 			foreach ($Contact->getContacts() as $OneContact) { ?>
 			<tr>
 		<td><?php echo $OneContact['person_first_name']?></td>

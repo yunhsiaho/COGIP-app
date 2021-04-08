@@ -85,7 +85,7 @@ Que souhaiterez-vous faire aujourd'hui ?<br/>
       <?php
       $x=0;
       
-      $contacts= new ContactManager();
+      $contacts= new ContactsManager();
 
         foreach ($contacts->getContacts() as $contact) { 
           if ($x>=5)

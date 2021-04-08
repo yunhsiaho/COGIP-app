@@ -5,7 +5,7 @@ class CompaniesManager extends Dbconnect {
 
     public function getCompanies() {
   
-        $sql = "SELECT * FROM companies";
+        $sql = "SELECT * FROM companies ORDER BY comp_id DESC";
         
         $stmt = $this->connect()->query($sql); 
         
@@ -16,7 +16,7 @@ class CompaniesManager extends Dbconnect {
 
     public function getCompanies_clients() {
   
-        $sql = "SELECT * FROM companies WHERE comp_type='client' LIMIT 5";
+        $sql = "SELECT * FROM companies WHERE comp_type='client' ";
         
         $stmt = $this->connect()->query($sql); 
         
@@ -27,7 +27,7 @@ class CompaniesManager extends Dbconnect {
 
     public function getCompanies_provider() {
     
-        $sql = "SELECT * FROM companies WHERE comp_type='provider' LIMIT 5";
+        $sql = "SELECT * FROM companies WHERE comp_type='provider' ";
         
         $stmt = $this->connect()->query($sql);
         
@@ -73,6 +73,16 @@ public function getCompaniesInvoices() {
 $companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 return $companies;
+
+}
+public function createCompany($compName, $compCountry, $VAT, $compType) {
+
+    $sql = "INSERT INTO companies(comp_name, comp_country, comp_VAT, comp_type)
+    VALUES( '$compName', '$compCountry', '$VAT', '$compType'); ";
+    $stmt = $this->connect()->query($sql); 
+    $createCompany = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // mysqli_query($createCompany, $sql);
+    // header(Location:'View/create_company_page.php');
 
 }
 }
