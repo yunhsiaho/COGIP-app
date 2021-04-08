@@ -61,7 +61,7 @@ include '../Model/InvoicesManager.php'; //link the manager
 		<td><?php echo $detail_Comp['comp_type']?></td>
 		</tr>
 		<?php break; endif?>
-		<!-- end of the filter if-->
+		<!-- end of the POST['more'] if-->
 		<?php endforeach  ?>
 		<!-- end of the getdetailcomp foreach-->
 		</table>
