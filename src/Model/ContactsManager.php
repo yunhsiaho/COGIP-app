@@ -47,7 +47,7 @@ public function getDetailInvoices(){
 public function createContact($contactFirstname, $contactLastname, $email, $compId) {
 
     $sql = "INSERT INTO contact_persons(person_first_name, person_last_name, person_email, comp_id)
-    VALUES( '$contactFirstname', '$contactLastname', '$email', '$compId'); ";
+    VALUES('$contactFirstname','$contactLastname','$email','$compId'); ";
     $stmt = $this->connect()->query($sql); 
     $createContact = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // mysqli_query($createCompany, $sql);

@@ -1,14 +1,14 @@
 <?php 
 require 'includes/header.php';
-include '../Model/Manager.php';
-include '../Model/CompaniesManager.php';
-include '../Model/ContactsManager.php';
+require '../Model/Manager.php';
+require '../Model/CompaniesManager.php';
+require '../Model/ContactsManager.php';
 
 ?>
 <h1>Create a new contact</h1>
 <div class="container">
 <div class="create-container">
-    <form>
+    <form method="POST">
     <div class="input-form">
         <label for="contact-firstname">First Name</label><br>
         <input type="text" id="contact-firstname" name="contact-firstname" height="200px" placeholder="First Name"><br>
@@ -22,7 +22,6 @@ include '../Model/ContactsManager.php';
 		<?php foreach ($companies->getCompanies() as $company): ?>
             <option value='<?php echo $company['comp_id'] ?>'><?php echo $company['comp_id'].$company['comp_name'] ?></option>
         <?php endforeach ?>
-
         </select>
     </div>
     <button type="submit" name="submit" class="create-button">Create</button>
