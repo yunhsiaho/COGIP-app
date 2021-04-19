@@ -8,7 +8,7 @@ class InvoicesController
 {
     public function render()
     {
-        $companies_provider = new CompaniesManager();
+        $companies_provider = new InvoicesManager();
 
         require('./View/Companies_pages.php');
     }

@@ -53,6 +53,7 @@ require 'includes/header.php';
           <td><?php echo $invoice['invoice_num'] ?></td>
           <td><?php echo $invoice['invoice_date'] ?></td>
           <td><?php echo $invoice['comp_name'] ?></td>
+          <td><button>delete</button></td>
         </tr>
 
       <?php
@@ -92,6 +93,7 @@ require 'includes/header.php';
           <td><?php echo $contact['person_first_name'] ?></td>
           <td><?php echo $contact['person_email'] ?></td>
           <td><?php echo $contact['comp_name'] ?></td>
+          <td><button>delete</button></td>
         </tr>
 
       <?php
@@ -130,6 +132,7 @@ require 'includes/header.php';
           <td><?php echo $company['comp_name'] ?></td>
           <td><?php echo $company['comp_country'] ?></td>
           <td><?php echo $company['comp_type'] ?></td>
+          <td><button>delete</button></td>
 
         </tr>
         </form>
