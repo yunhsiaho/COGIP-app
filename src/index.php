@@ -6,7 +6,7 @@ require_once('Controller/HomepageController.php');
 require_once('Controller/InvoicesController.php');
 require_once('Controller/CompanyController.php');
 require_once('Controller/ContactsController.php');
-require_once('Controller/DashboardController.php');
+require_once('Controller/LoginController.php');
 require_once('Controller/AddCompany.php');
 require_once('Controller/AddContact.php');
 require_once('Controller/AddInvoice.php');
@@ -31,7 +31,7 @@ if (isset($_GET['page']) && $_GET['page'] === 'contacts') {
     $controller = new ContactController();
 }
 if (isset($_GET['page']) && $_GET['page'] === 'admin') {
-    $controller = new DashboardController();
+    $controller = new LoginController();
 }
 if (isset($_GET['page']) && $_GET['page'] === 'addcontact') {
     $controller = new AddContact();

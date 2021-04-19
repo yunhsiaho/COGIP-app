@@ -1,3 +1,4 @@
+<?php require 'style.php' ?>
 <!doctype html>
 <html lang="en">
 
@@ -10,16 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
     <title>Becode - Boiler plate MVC</title>
 </head>
-<?php require 'style.php' ?>
+
 
 <body>
     <header>
         <ul>
-            <span class="logo"><a href="/index.php"><img src="logo.png" alt="#" width="100%" height="100%"></a></span>
+        <span class="logo"><a href="/index.php"><img src="logo.png" alt="#" width="100%" height="100%"></a></span>
             <li><a href="/?page=invoices">Invoices</a></li>
             <li><a href="/?page=companies">Companies</a></li>
             <li><a href="/?page=contacts">Contacts</a></li>
             <li><a href="/?page=admin">Admin</a></li>
+    </ul>
 
         </ul>
         </span>

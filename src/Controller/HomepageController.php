@@ -12,11 +12,6 @@ class HomepageController
         $companies = new CompaniesManager();
         $invoices = new InvoicesManager();
         $contacts = new ContactsManager();
-
-        $invoices = new InvoicesManager();
-
-        $contacts = new ContactsManager();
-
         require('./View/homepage.php');
         
     }

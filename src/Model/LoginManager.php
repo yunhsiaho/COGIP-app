@@ -1,5 +1,6 @@
 <?php
 require_once('Manager.php');
+require_once('AdminManager.php');
 
 class RegisterManager extends Dbconnect
 {
