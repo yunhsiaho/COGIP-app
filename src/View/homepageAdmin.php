@@ -1,9 +1,5 @@
 <?php
 require 'includes/header.php';
-include '../Model/CompaniesManager.php';
-include '../Model/InvoicesManager.php';
-include '../Model/ContactsManager.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +124,7 @@ include '../Model/ContactsManager.php';
               break;
           ?>
 
-            <form action="index.php" method="get">
+            <form action="" method="get">
         <tr>
 
           <td><?php echo $company['comp_name'] ?></td>

@@ -1,25 +1,24 @@
 <?php
-require 'Manager.php';
+require_once('Manager.php');
 
-class LoginManager extends Dbconnect
+class RegisterManager extends Dbconnect
 {
-    public function login()
+    public function signUp($userName, $password)
     {
-        $db = $this->connectDb();
+        $db = $this->connect();
 
-        $req = $db->prepare('SELECT *
-            FROM Admin
-            WHERE Username = :username');
-
-        $req->execute(['username' => $username]);
-
-        $login = $req->fetch();
-
-        return $login;
+        try {
+            $response = $db->prepare(
+                "INSERT INTO login(username, password)
+                  VALUES(:username, :password)"
+            );
+            $response->execute([
+                'username' => $userName,
+                'password' => password_hash($password, PASSWORD_DEFAULT)
+            ]);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            exit();
+        }
     }
-
 }
-
-
-
-
