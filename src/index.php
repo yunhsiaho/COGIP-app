@@ -3,13 +3,13 @@
 declare(strict_types=1);
 
 require_once('Controller/HomepageController.php');
-// require_once('Controller/InvoicesController.php');
-// require_once('Controller/CompanyController.php');
-// require_once('Controller/ContactsController.php');
-// require_once('Controller/LoginController.php');
-// require_once('Controller/AddCompany.php');
-// require_once('Controller/AddContact.php');
-// require_once('Controller/AddInvoice.php');
+require_once('Controller/InvoicesController.php');
+require_once('Controller/CompanyController.php');
+require_once('Controller/ContactsController.php');
+require_once('Controller/LoginController.php');
+require_once('Controller/AddCompany.php');
+require_once('Controller/AddContact.php');
+require_once('Controller/AddInvoice.php');
 
 
 // $controller = new HomepageController();
