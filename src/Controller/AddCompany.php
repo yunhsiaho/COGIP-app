@@ -1,6 +1,6 @@
 <?php
 
-require_once('../model/CompaniesManager.php');
+require_once('./Model/CompaniesManager.php');
 
 class AddCompany
 {
@@ -18,6 +18,6 @@ class AddCompany
             }
         }
 
-        require('../view/create_company_page.php');
+        require('./View/create_company_page.php');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-require_once('../model/ContactsManager.php');
+require_once('./Model/ContactsManager.php');
 
 class AddContact
 {
@@ -18,6 +18,6 @@ class AddContact
                 );
             }
         }
-        require('../view/create_contact_page.php');
+        require('./View/create_contact_page.php');
     }
 }

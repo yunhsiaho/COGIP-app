@@ -1,11 +1,9 @@
 <?php
 
 declare(strict_types=1);
-
-require_once('../model/CompaniesManager.php');
-require_once('../model/InvoicesManager.php');
-require_once('../model/ContactsManager.php');
-
+require_once('./Model/CompaniesManager.php');
+require_once('./Model/InvoicesManager.php');
+require_once('./Model/ContactsManager.php');
 
 class HomepageController
 {
@@ -17,6 +15,6 @@ class HomepageController
 
         $contacts = new ContactsManager();
 
-        require('../View/homepage.php');
+        require('./View/homepage.php');
     }
 }

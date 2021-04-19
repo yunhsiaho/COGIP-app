@@ -1,6 +1,6 @@
 <?php
 
-require_once('../model/InvoicesManager.php');
+require_once('./Model/InvoicesManager.php');
 
 class AddInvoice
 {
@@ -18,6 +18,6 @@ class AddInvoice
                 );
             }
         }
-        require('../view/create_invoice_page.php');
+        require('./View/create_invoice_page.php');
     }
 }

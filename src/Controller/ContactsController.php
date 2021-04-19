@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once('../Model/ContactManager.php');
+require_once('./Model/ContactsManager.php');
 
 class ContactController
 {
@@ -11,6 +11,6 @@ class ContactController
     {
         $Contact = new ContactsManager();
 
-        require('../View/Contact_Page.php');
+        require('./View/Contact_Page.php');
     }
 }

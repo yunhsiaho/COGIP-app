@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-require_once('../Model/InvoicesManager.php');
-
+require_once('./Model/InvoicesManager.php');
 
 class InvoicesController
 {
@@ -11,6 +10,6 @@ class InvoicesController
     {
         $companies_provider = new CompaniesManager();
 
-        require('../View/Companies_pages.php');
+        require('./View/Companies_pages.php');
     }
 }
