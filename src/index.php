@@ -30,7 +30,7 @@ if (isset($_GET['page']) && $_GET['page'] === 'companies') {
 if (isset($_GET['page']) && $_GET['page'] === 'contacts') {
     $controller = new ContactController();
 }
-if (isset($_GET['page']) && $_GET['page'] === 'dashboard') {
+if (isset($_GET['page']) && $_GET['page'] === 'admin') {
     $controller = new DashboardController();
 }
 if (isset($_GET['page']) && $_GET['page'] === 'addcontact') {

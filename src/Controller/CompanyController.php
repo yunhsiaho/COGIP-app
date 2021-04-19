@@ -8,7 +8,7 @@ class CompanyController
 {
     public function render()
     {
-        $companies_provider = new CompaniesManager();
+        $companies = new CompaniesManager();
 
         require('./View/Companies_page.php');
     }

@@ -8,8 +8,8 @@ class InvoicesController
 {
     public function render()
     {
-        $companies_provider = new InvoicesManager();
+        $invoices = new InvoicesManager();
 
-        require('./View/Companies_pages.php');
+        require('./View/Invoices_page.php');
     }
 }

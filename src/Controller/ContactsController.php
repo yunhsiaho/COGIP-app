@@ -11,6 +11,6 @@ class ContactController
     {
         $Contact = new ContactsManager();
 
-        require('./View/Contact_Page.php');
+        require('./View/Contact_page.php');
     }
 }
