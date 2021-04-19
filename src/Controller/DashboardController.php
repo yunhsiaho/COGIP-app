@@ -2,22 +2,56 @@
 
 declare(strict_types=1);
 
-require_once('./model/CompaniesManager.php');
-require_once('./model/InvoicesManager.php');
-require_once('./model/ContactsManager.php');
+require_once('../model/CompaniesManager.php');
+require_once('../model/InvoicesManager.php');
+require_once('../model/ContactsManager.php');
 
-
-class CompanyController
+class DashboardController
 {
     public function render()
     {
-        $companies_provider = new CompaniesManager();
-
-        $view = '../View/Companies_pages.php';
-
-        if (isset($_GET['id'])) {
+        $contacts = new ContactsManager();
+        if (isset($_POST['addcontact'])) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $contacts->createContact(
+                    $_POST['person_first_name,'],
+                    $_POST['person_last_name'],
+                    $_POST['person_email'],
+                    $_POST['comp_id'],
+                    $_POST['comp_id']
+                );
+            }
         }
+        //delete
 
-        require $view;
+        $companies = new CompaniesManager();
+        if (isset($_POST['addcompany'])) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $companies->createCompany(
+                    $_POST['comp_name'],
+                    $_POST['comp_country'],
+                    $_POST['comp_VAT'],
+                    $_POST['comp_type']
+                );
+            }
+        }
+        //delete
+
+        $invoices = new InvoicesManager();
+        if (isset($_POST['addinvoice'])) {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $invoices->createInvoice(
+                    $_POST['invoice_num'],
+                    $_POST['invoice_date'],
+                    $_POST['comp_VAT'],
+                    $_POST['comp_id'],
+                    $_POST['person_id']
+                );
+            }
+        }
+        //delete
+
+
+
     }
 }
