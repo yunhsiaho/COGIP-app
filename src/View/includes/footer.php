@@ -1,5 +1,5 @@
     <footer>
-        &copy; BeCode <?php echo date('Y')?>
+        Made by Asce & Hsia & Tomi  &copy; BeCode <?php echo date('Y')?>
     </footer>
 </body>
 </html>

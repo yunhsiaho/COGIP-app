@@ -1,19 +1,21 @@
 <?php
-declare(strict_types=1);
 
-namespace Becode\MVCBoilerplate\Model;
-
-class Manager
+class Dbconnect
 {
-	protected function connectDb()
+	protected function connect()
 	{
-		try{
-			$db = new PDO("mysql:host=mysql;dbname=classicmodels;port=3306","root","root");
-		    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    return $db;
-	    } catch(Exception $e){
-	        die('Error : '.$e->getMessage());
-	    }
-	}
+		$db = new PDO(
+			//remote sql:
+			"mysql:dbname=sLl9cMVYKs;host=remotemysql.com;port=3306;",
+			"sLl9cMVYKs",
+			"JmHxHiGJlO",
 
+			[
+				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+			]
+		);
+
+		return $db;
+	}
 }
