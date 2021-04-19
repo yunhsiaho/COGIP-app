@@ -1,13 +1,11 @@
 <?php
-require '../Model/LoginManager.php';
 
 class LoginController
 {
-    public function Anonyme() 
+    public function render()
     {
-        $login = new LoginManager()
+        $login = new LoginManager();
+
+        require('../view/homepage.php');
     }
-
 }
-
-
