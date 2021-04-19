@@ -1,12 +1,13 @@
-<?php session_start();?>
+
 <?php 
 require 'includes/header.php';
 include '../Model/Manager.php';
 include '../Model/CompaniesManager.php';
 include '../Model/InvoicesManager.php';
 include '../Model/ContactsManager.php';
-// include '../View/Admin_page.php';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,19 +22,14 @@ include '../Model/ContactsManager.php';
 <section>
 
 <h1>Welcome to the COGIP!</h1>
-<?php echo "Bonjour"." ".$_SESSION['type']." ".$_SESSION['name'] ; ?>
-<br/>
+
+
+Bonjour Jean-Christian ! <br/>
 Que souhaiterez-vous faire aujourd'hui ?<br/>
 <br/>
-<?php 
-if($_SESSION['type']=='manager'||$_SESSION['type']=='moderator'){
-  echo '<td><button><a href="create_invoice_page.php">+ New Invoice</a></button></td>
-  <td><button><a href="create_contact_page.php">+ New Contact</a></button></td>
-  <td><button><a href="create_company_page.php">+ New Company</a></button></td>';
-}
-?>
-
-
+<td><button><a href="create_invoice_page.php">+ New Invoice</a></button></td>
+<td><button><a href="create_contact_page.php">+ New Contact</a></button></td>
+<td><button><a href="create_company_page.php">+ New Company</a></button></td>
 
 <h3>Last Invoices</h3>
     
@@ -61,15 +57,10 @@ if($_SESSION['type']=='manager'||$_SESSION['type']=='moderator'){
 			<td><?php echo $invoice['invoice_num']?></td>
 			<td><?php echo $invoice['invoice_date']?></td>
 			<td><?php echo $invoice['comp_name']?></td>
-      <?php 
-    if($_SESSION['type']=='manager'){
-      echo "<td><button>delete</button></td>";
-    }
-    ?>
         </tr>	
     
         <?php
-          $x++; } 
+        	$x++; } 
         ?>
 
       </tr>
@@ -104,11 +95,6 @@ if($_SESSION['type']=='manager'||$_SESSION['type']=='moderator'){
             <td><?php echo $contact['person_first_name']?></td>
             <td><?php echo $contact['person_email']?></td>
             <td><?php echo $contact['comp_name']?></td>
-            <?php 
-    if($_SESSION['type']=='manager'){
-      echo "<td><button>delete</button></td>";
-    }
-    ?>
             </tr>	
         
         <?php
@@ -146,11 +132,7 @@ if($_SESSION['type']=='manager'||$_SESSION['type']=='moderator'){
                     <td><?php echo $company['comp_name']?></td>
                     <td><?php echo $company['comp_country']?></td>
                     <td><?php echo $company['comp_type']?></td>
-                    <?php 
-    if($_SESSION['type']=='manager'){
-      echo "<td><button>delete</button></td>";
-    }
-    ?>
+                    
                 </tr>	
               </form>
             
