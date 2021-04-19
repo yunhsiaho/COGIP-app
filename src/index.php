@@ -1,7 +1,7 @@
 <?php
-include 'connect.php';
-include 'CompaniesManager.php';
-include 'InvoicesManager.php';
+include './Model/Manager.php';
+include 'View/CompaniesManager.php';
+include 'View/InvoicesManager.php';
 include 'View/homepage.php'
 
 ?>
@@ -31,16 +31,15 @@ include 'View/homepage.php'
 <th>Country</th>
 <th>Type</th></tr>
     <?php
-                $companies= new CompaniesManager();
+        $companies= new CompaniesManager();
         foreach ($companies->getCompanies() as $company) { ?>
         <tr>
-    <td><?php echo $company['comp_name']?></td>
-                    <td><?php echo $company['comp_country']?></td>
-                    <td><?php echo $company['comp_type']?></td>
-    <td><button>more</button></td>
-    <td><button>edit</button></td>
-
-    </tr>	
+            <td><?php echo $company['comp_name']?></td>
+            <td><?php echo $company['comp_country']?></td>
+            <td><?php echo $company['comp_type']?></td>
+            <td><button>more</button></td>
+            <td><button>edit</button></td>
+        </tr>	
         
     <?php } ?>
 </table>

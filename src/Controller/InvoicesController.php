@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-require_once('../Model/CompaniesManager.php');
+require_once('../Model/InvoicesManager.php');
 
 
-class CompanyController
+class InvoicesController
 {
     public function render()
     {

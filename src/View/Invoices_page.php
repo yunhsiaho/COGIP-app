@@ -31,8 +31,6 @@ include '../Model/InvoicesManager.php';
 			<td><?php echo $invoice['invoice_date']?></td>
 			<td><?php echo $invoice['comp_name']?></td>
 			<form action="" method="post">
-			<td><button name="more" type="submit">more</button></td>
-			<td><button>edit</button></td>
 			</form>
 			</tr>
 		<?php
