@@ -10,11 +10,14 @@ class HomepageController
     public function render()
     {
         $companies = new CompaniesManager();
+        $invoices = new InvoicesManager();
+        $contacts = new ContactsManager();
 
         $invoices = new InvoicesManager();
 
         $contacts = new ContactsManager();
 
         require('./View/homepage.php');
+        
     }
 }

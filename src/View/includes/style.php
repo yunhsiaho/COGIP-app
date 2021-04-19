@@ -8,13 +8,11 @@ header{
     width:100%;
     height:10%;
     margin-top:1rem;
-    border:1px solid white;
 }
 .logo{
-    position:absolute;
-    left:-5%;
-    top:0.5rem;
-    /* border:1px solid purple; */
+    position: absolute;
+    left: 5%;
+    top: 2.5rem;
 }
 ul{
     list-style-type: none;
@@ -55,6 +53,7 @@ footer{
 /* body-page */
 h1{
     text-align:center;
+    color:#264653;
 }
 .container{
     position:relative;
@@ -67,6 +66,7 @@ table{
 th{
     text-align:left;
 }
+
 /* admin */
 .admin-container form{
     height:50%;
@@ -99,6 +99,59 @@ th{
     height:3rem;
     width:6rem;
     margin-top:2rem;
+    background-color:#F6F5F4;
+    color:#264653;
+    border:none;
+    border-radius:10px;
+}
+/* create pages */
+.create-container form{
+    height:50%;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-4%;
+    padding:4rem;
+    /* border:2px solid #9A8F84; */
+    border-radius:30px;
+    background-color:#C7DDE6;
+    text-align:center;
+}
+.input-form{
+    background-color:#C7DDE6;
+    text-align:left;
+}
+.create-container label{
+    background-color:#C7DDE6;
+    color:#264653;
+    margin-left:1rem;
+    margin-top:1rem;
+    font-size:1.8rem;
+}
+.create-container input {
+    height:2rem;
+    width:95%;
+    background-color:#F6F5F4;
+    border:none;
+    font-size:1.2rem;
+    margin-top:0.5rem;
+    margin-bottom:2rem;
+    margin-left:1rem;
+}
+.create-container select{
+    height:2rem;
+    width:95%;
+    background-color:#F6F5F4;
+    border:none;
+    font-size:1.2rem;
+    margin-top:0.5rem;
+    margin-bottom:2rem;
+    margin-left:1rem;
+}
+.create-button{
+    font-size:1.5rem;
+    height:4rem;
+    width:8rem;
     background-color:#F6F5F4;
     color:#264653;
     border:none;

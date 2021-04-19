@@ -6,7 +6,6 @@ include '../Model/ContactsManager.php';
 include '../Model/InvoicesManager.php';
 
 ?>
-
 <h1>Create a new Invoice</h1>
 <div class="container">
 <div class="create-container">

@@ -4,7 +4,6 @@ require 'includes/header.php';
 
 <div class="container">
 	<h1>COGIP : Companies Directory</h1>
-
 	<h4>Clients</h4>
 	<table>
 		<tr>
