@@ -54,4 +54,6 @@ public function createContact($contactFirstname, $contactLastname, $email, $comp
     // header(Location:'View/create_company_page.php');
 
 }
+
+
 }

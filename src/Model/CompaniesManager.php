@@ -85,6 +85,12 @@ public function createCompany($compName, $compCountry, $VAT, $compType) {
     // header(Location:'View/create_company_page.php');
 
 }
+
+public function  deleteCompany() {
+    
+
+
+}
 }
 
  //  while($row = $stmt->fetch()) {

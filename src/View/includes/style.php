@@ -2,6 +2,9 @@
 *{
     background-color:#F6F6F4;
     font-family: 'Kiwi Maru', serif;
+    padding: 0;
+    margin: 0;
+
 }
 /* header */
 header{
@@ -160,4 +163,41 @@ th{
     border:none;
     border-radius:10px;
 }
+
+
+/* modal */
+
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6); 
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    trasmition: visibility 0s, opacity 0.5s;
+
+}
+
+.bg-active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal{
+    background-color: rgba(123,54,153);
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
 </style>

@@ -23,10 +23,13 @@ include '../Model/InvoicesManager.php';
 				<td><?php echo $company_client['comp_country']?></td>
 				<form action=""method="post">
         <td><button name="more" type="submit" value=<?php echo $company_client['comp_id']?>>more</button></td>
+								<td><button name="delete" type="submit" value=<?php echo $company_client['comp_id']?>>delete</button></td>
         </form>
 			</tr>	
 			<?php } ?>
 	</table>
+
+
 
 	<h4>Suppliers</h4>
 	<table>
@@ -43,10 +46,13 @@ include '../Model/InvoicesManager.php';
 				<td><?php echo $company_provider ['comp_country']?></td>
 				<form action=""method="post">
         <td><button name="more" type="submit" value=<?php echo $company_provider['comp_id']?>>more</button></td>
+								<td><button name="delete" type="submit" value=<?php echo $company_provider['comp_id']?>>delete</button></td>
         </form>
 			</tr>	
 			<?php } ?>
 	</table>
+
+
 	<?php $companies=new CompaniesManager(); ?>
 	<?php if(isset($_POST['more'])): ?>
     <?php foreach($companies->getCompaniesInfos() as $companies_infos): ?>
@@ -78,5 +84,16 @@ include '../Model/InvoicesManager.php';
     <?php endif ?>
     <?php endforeach ?>
     <?php endif ?>
+
+				
+
+				<?php if(isset($_POST['delete'])){
+					echo $company_client['comp_id'];
+				};
+				
+				?>
+			
+
+
 	<?php require 'includes/footer.php'?>
 </div>
