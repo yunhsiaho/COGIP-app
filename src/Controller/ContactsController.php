@@ -6,7 +6,6 @@ require_once('./Model/ContactsManager.php');
 
 class ContactController
 {
-
     public function render()
     {
         $Contact = new ContactsManager();

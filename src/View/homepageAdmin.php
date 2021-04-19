@@ -43,8 +43,6 @@ require 'includes/header.php';
           <?php
           $x = 0;
 
-
-          $invoices = new InvoicesManager();
           foreach ($invoices->getInvoices() as $invoice) {
             if ($x >= 5)
               break; ?>
@@ -76,23 +74,19 @@ require 'includes/header.php';
         </tr>
       </thead>
 
-
       <tbody>
         <tr>
 
           <?php
           $x = 0;
-
-          $contacts = new ContactsManager();
-
-          foreach ($contacts->getContacts() as $contact) {
+          foreach ($contacts->getContacts() as $Contact) {
             if ($x >= 5)
               break; ?>
 
         <tr>
-          <td><?php echo $contact['person_first_name'] ?></td>
-          <td><?php echo $contact['person_email'] ?></td>
-          <td><?php echo $contact['comp_name'] ?></td>
+          <td><?php echo $Contact['person_first_name'] ?></td>
+          <td><?php echo $Contact['person_email'] ?></td>
+          <td><?php echo $Contact['comp_name'] ?></td>
           <td><button>delete</button></td>
         </tr>
 
@@ -120,7 +114,6 @@ require 'includes/header.php';
           <?php
           $x = 0;
 
-          $companies = new CompaniesManager();
           foreach ($companies->getCompanies() as $key => $company) {
             if ($x >= 5)
               break;

@@ -34,9 +34,6 @@ require 'includes/header.php';
                 <tr>
                     <?php
                     $x = 0;
-
-
-                    $invoices = new InvoicesManager();
                     foreach ($invoices->getInvoices() as $invoice) {
                         if ($x >= 5)
                             break; ?>
@@ -67,15 +64,11 @@ require 'includes/header.php';
                 </tr>
             </thead>
 
-
             <tbody>
                 <tr>
 
                     <?php
                     $x = 0;
-
-                    $contacts = new ContactsManager();
-
                     foreach ($contacts->getContacts() as $contact) {
                         if ($x >= 5)
                             break; ?>
@@ -110,19 +103,16 @@ require 'includes/header.php';
                     <?php
                     $x = 0;
 
-                    $companies = new CompaniesManager();
                     foreach ($companies->getCompanies() as $key => $company) {
                         if ($x >= 5)
                             break;
                     ?>
 
-                        <form action="" method="get">
-                <tr>
 
+                <tr>
                     <td><?php echo $company['comp_name'] ?></td>
                     <td><?php echo $company['comp_country'] ?></td>
                     <td><?php echo $company['comp_type'] ?></td>
-
                 </tr>
                 </form>
 
