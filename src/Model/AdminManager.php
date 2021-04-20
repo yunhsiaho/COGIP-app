@@ -1,6 +1,5 @@
 <?php
 
-
 class AdminManager extends Dbconnect {
 
 public function getAdminDB() {
@@ -15,3 +14,4 @@ return $admin;
 
 }
 }
+

@@ -21,14 +21,14 @@ require 'includes/header.php';
 
     <h1>Welcome to the COGIP!</h1>
 <?php echo "Bonjour"." ".$_SESSION['type']." ".$_SESSION['name'] ;  ?>
-
+<br />
     Que souhaiterez-vous faire aujourd'hui ?<br />
     <br />
     <?php
     if($_SESSION['type']=='manager'||$_SESSION['type']=='moderator'){
-  echo '<td><button><a href="create_invoice_page.php">+ New Invoice</a></button></td>
-  <td><button><a href="create_contact_page.php">+ New Contact</a></button></td>
-  <td><button><a href="create_company_page.php">+ New Company</a></button></td>';
+  echo '<td><button><a href="./View/create_invoice_page.php">+ New Invoice</a></button></td>
+  <td><button><a href="./View/create_contact_page.php">+ New Contact</a></button></td>
+  <td><button><a href="./View/create_company_page.php">+ New Company</a></button></td>';
 }
 ?>
     <h3>Last Invoices</h3>
