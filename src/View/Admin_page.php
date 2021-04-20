@@ -7,8 +7,8 @@ require 'includes/header.php';
     if(isset($_POST['submit'])){
         $Username=$_POST['Username'];
         $Password=$_POST['Password'];
-        $_SESSION['type'] = "";
-        $_SESSION['name'] = "";
+        $_SESSION['type'] = " ";
+        $_SESSION['name'] = " ";
         if(!$Username==""||!$Password==""){
 
         $AdminInfos= new AdminManager();
