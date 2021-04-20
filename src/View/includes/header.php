@@ -16,11 +16,11 @@
 <body>
     <header>
         <ul>
-        <span class="logo"><a href="/index.php"><img src="logo.png" alt="#" width="100%" height="100%"></a></span>
-            <li><a href="View/?page=invoices">Invoices</a></li>
-            <li><a href="View/?page=companies">Companies</a></li>
-            <li><a href="View/?page=contacts">Contacts</a></li>
-            <li><a href="View/?page=admin">Admin</a></li>
+        <span class="logo"><a href="/src/index.php"><img src="logo.png" alt="#" width="100%" height="100%"></a></span>
+            <li><a href="/src/View/?page=invoices">Invoices</a></li>
+            <li><a href="/src/View/?page=companies">Companies</a></li>
+            <li><a href="/src/View/?page=contacts">Contacts</a></li>
+            <li><a href="/src/View/?page=admin">Admin</a></li>
     </ul>
 
         </ul>
