@@ -17,10 +17,10 @@
     <header>
         <ul>
         <span class="logo"><a href="/index.php"><img src="logo.png" alt="#" width="100%" height="100%"></a></span>
-            <li><a href="/?page=invoices">Invoices</a></li>
-            <li><a href="/?page=companies">Companies</a></li>
-            <li><a href="/?page=contacts">Contacts</a></li>
-            <li><a href="/?page=admin">Admin</a></li>
+            <li><a href="src/View/?page=invoices">Invoices</a></li>
+            <li><a href="src/View/?page=companies">Companies</a></li>
+            <li><a href="src/View/?page=contacts">Contacts</a></li>
+            <li><a href="src/View/?page=admin">Admin</a></li>
     </ul>
 
         </ul>
