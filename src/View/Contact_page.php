@@ -38,7 +38,6 @@ require 'includes/header.php';
 				<hr />
 			<?php endif ?>
 		<?php endforeach ?>
-		<!-- <?php var_dump($Contact); ?> -->
 		<h3>Contact person for these invoices:</h3>
 		<?php foreach ($Contact->getDetailInvoices() as $detail_invoices) : ?>
 			<?php if ($_POST['more'] == $detail_invoices['person_id']) : ?>

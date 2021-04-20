@@ -12,30 +12,29 @@ require_once('Controller/AddContact.php');
 require_once('Controller/AddInvoice.php');
 
 
-// $controller = new HomepageController();
+$controller = new HomepageController();
 
-// if (isset($_GET['page']) && $_GET['page'] === 'invoices') {
-//     $controller = new InvoicesController();
-// }
-// if (isset($_GET['page']) && $_GET['page'] === 'companies') {
-//     $controller = new CompanyController();
-// }
-// if (isset($_GET['page']) && $_GET['page'] === 'contacts') {
-//     $controller = new ContactController();
-// }
-// if (isset($_GET['page']) && $_GET['page'] === 'admin') {
-//     $controller = new LoginController();
-// }
-// if (isset($_GET['page']) && $_GET['page'] === 'addcontact') {
-//     $controller = new AddContact();
-// }
-// if (isset($_GET['page']) && $_GET['page'] === 'addcompany') {
-//     $controller = new AddCompany();
-// }
-// if (isset($_GET['page']) && $_GET['page'] === 'addinvoice') {
-//     $controller = new AddInvoice();
-// }
+if (isset($_GET['page']) && $_GET['page'] === 'invoices') {
+    $controller = new InvoicesController();
+}
+if (isset($_GET['page']) && $_GET['page'] === 'companies') {
+    $controller = new CompanyController();
+}
+if (isset($_GET['page']) && $_GET['page'] === 'contacts') {
+    $controller = new ContactsController();
+}
+if (isset($_GET['page']) && $_GET['page'] === 'admin') {
+    $controller = new LoginController();
+}
+if (isset($_GET['page']) && $_GET['page'] === 'addcontact') {
+    $controller = new AddContact();
+}
+if (isset($_GET['page']) && $_GET['page'] === 'addcompany') {
+    $controller = new AddCompany();
+}
+if (isset($_GET['page']) && $_GET['page'] === 'addinvoice') {
+    $controller = new AddInvoice();
+}
 
-// $controller->render();
+$controller->render();
 ?>
-<h1>hello</h1>

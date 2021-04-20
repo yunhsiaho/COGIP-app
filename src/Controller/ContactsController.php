@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require_once('./Model/ContactsManager.php');
 
-class ContactController
+class ContactsController
 {
     public function render()
     {

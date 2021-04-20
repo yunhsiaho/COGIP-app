@@ -11,7 +11,7 @@ class RegisterManager extends Dbconnect
         try {
             $response = $db->prepare(
                 "INSERT INTO login(username, password)
-                  VALUES(:username, :password)"
+                VALUES(:username, :password)"
             );
             $response->execute([
                 'username' => $userName,
